@@ -1,0 +1,24 @@
+  # The steps of the workflow
+  templates:
+
+  # `salutations` is a template that just contains a list of `steps`, which are other templates
+  - name: salutations
+    steps:
+
+    # This template runs the `welcome-to-orquestra` template in the `welcome` resource
+    - - name: greeting
+        template: welcome-to-orquestra
+        arguments:
+          parameters:
+          - resources: [welcome]
+
+    # This template runs the `z-transformation` template in the `ztransform` resource
+    - - name: transform-welcome
+        template: z-transformation
+        arguments:
+          parameters:
+          - resources: [ztransform]
+          artifacts:
+          - name: message
+            # This template takes in the output artifact from the `welcome` template. 
+            from: '{{steps.greeting.outputs.artifacts.welcome}}'
