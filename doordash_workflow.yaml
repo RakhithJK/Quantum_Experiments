@@ -16,8 +16,6 @@ resources:
     
 # Data to help you easily work with your workflow
 metadata:
-
-  # Prefix for workflow ID
   generateName: doordash-
 
 # Data for running the workflow
@@ -45,6 +43,6 @@ spec:
         template: doordash
         arguments:
           parameters:
-          - baseurl: "https://www.doordash.com"
+          - baseurl: https://www.doordash.com
           - latitude: "39.596371"
           - longitude: "-119.777603"

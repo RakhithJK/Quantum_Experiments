@@ -21,6 +21,10 @@ spec:
             import requests
             import urlparse
 
+            baseurl = "https://www.doordash.com"
+            latitude = "39.596371"
+            longitude = "-119.777603"
+
             from doordash import query_doordash_by_location
             restaurants = query_doordash_by_location('{{inputs.parameters.baseurl}}','{{inputs.parameters.latitude}}',{{inputs.parameters.longitude}) 
             
