@@ -14,6 +14,5 @@ setuptools.setup(
     install_requires = [
        "urllib3",
        "requests",
-       "json",
    ],
 )
