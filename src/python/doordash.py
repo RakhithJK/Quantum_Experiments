@@ -2,7 +2,7 @@
 
 import json
 import requests
-import urlparse
+#import urlparse
 
 
 def query_doordash_by_location(baseurl=None, latitude=None, longitude=None):
@@ -21,7 +21,8 @@ def query_doordash_by_location(baseurl=None, latitude=None, longitude=None):
     latitude = "39.596371"
     longitude = "-119.777603"
 
-    url = urlparse.urljoin(baseurl, 'api/v2/restaurant/?lat={0}&lng={1}'.format(latitude, longitude))
+   # url = urlparse.urljoin(baseurl, 'api/v2/restaurant/?lat={0}&lng={1}'.format(latitude, longitude))
+    url = "https://www.doordash.com/api/v2/restaurant/?lat={0}&lng={1}".format(latitude, longitude) 
     response = requests.get(url)
 
     return response.json()
