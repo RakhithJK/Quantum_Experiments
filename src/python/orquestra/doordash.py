@@ -1,7 +1,7 @@
 """Function for querying doordash by lat/long."""
 
 
-def query_doordash_by_location(baseurl, latitude, longitude):
+def query_doordash_by_location(baseurl=None, latitude=None, longitude=None):
     """Search for restaurants around a location.
     
     Args:
@@ -12,6 +12,11 @@ def query_doordash_by_location(baseurl, latitude, longitude):
     Returns:
         dict: a dictionary containing found restaurants.
     """
+
+    baseurl = "https://www.doordash.com"
+    latitude = "39.596371"
+    longitude = "-119.777603"
+
     url = urlparse.urljoin(baseurl, 'api/v2/restaurant/?lat={0}&lng={1}'.format(latitude, longitude))
     response = requests.get(url)
 
