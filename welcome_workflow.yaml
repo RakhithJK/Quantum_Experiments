@@ -14,12 +14,6 @@ resources:
     url: "git@github.com:bt3gl/quantum-experiments.git"
     branch: "master"
     
-- name: ztransform
-  type: git
-  parameters:
-    url: "git@github.com:zapatacomputing/tutorial-0-ztransform.git"
-    branch: "master"
-
 # Data to help you easily work with your workflow
 metadata:
 
@@ -54,14 +48,3 @@ spec:
         arguments:
           parameters:
           - resources: [welcome]
-
-    # This template runs the `z-transformation` template in the `ztransform` resource
-    - - name: transform-welcome
-        template: z-transformation
-        arguments:
-          parameters:
-          - resources: [ztransform]
-          artifacts:
-          - name: message
-            # This template takes in the output artifact from the `welcome` template. 
-            from: '{{steps.greeting.outputs.artifacts.welcome}}'

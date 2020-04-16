@@ -15,7 +15,12 @@ spec:
         raw:
           data: |
             import json
-            restaurants = []
+            #import requests
+            import urlparse
+
+            from doordash import query_doordash_by_location
+            restaurants = query_doordash_by_location(baseurl, latitude, longitude) 
+            
             restaurants['schema'] = "restaurants_list"
             with open('restaurants.json', 'w') as f:
               f.write(json.dumps(restaurants))
