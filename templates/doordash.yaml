@@ -15,8 +15,6 @@ spec:
         raw:
           data: |
             import json
-            import requests
-            import urlparse
 
             from doordash import query_doordash_by_location
             restaurants = query_doordash_by_location(baseurl, latitude, longitude) 
