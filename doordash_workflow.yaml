@@ -16,13 +16,15 @@ resources:
     
 # Data to help you easily work with your workflow
 metadata:
+
+  # Prefix for workflow ID
   generateName: doordash-
 
 # Data for running the workflow
 spec:
 
   # Think of this as identifying the `main` function -- this tells the workflow which template to start with
-  entrypoint: doordash
+  entrypoint: salutations
 
   # Initializing global variables for use in workflow
   arguments:
@@ -36,10 +38,12 @@ spec:
   # The steps of the workflow
   templates:
 
-  - name: run-doordash
+  # `salutations` is a template that just contains a list of `steps`, which are other templates
+  - name: salutations
     steps:
 
-    - - name: doordash
+    # This template runs the `welcome-to-orquestra` template in the `welcome` resource
+    - - name: greeting
         template: doordash
         arguments:
           parameters:
