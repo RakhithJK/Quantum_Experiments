@@ -1,0 +1,46 @@
+# Workflow API version
+ZapOSApiVersion: v1alpha1
+
+# Declares this as workflow
+kind: Workflow
+
+# List resources needed by workflow.
+resources:
+
+# A resource named `welcome` that is a public git repo. All the fields here are required except branch, which defaults to master.
+- name: doordash
+  type: git
+  parameters:
+    url: "git@github.com:bt3gl/quantum-experiments.git"
+    branch: "master"
+    
+# Data to help you easily work with your workflow
+metadata:
+  generateName: doordash-
+
+# Data for running the workflow
+spec:
+
+  # Think of this as identifying the `main` function -- this tells the workflow which template to start with
+  entrypoint: doordash
+
+  # Initializing global variables for use in workflow
+  arguments:
+    parameters:
+
+    # Where output data is stored -- Must be `quantum-engine` for compatibility with Orquestra data services
+    - s3-bucket: quantum-engine
+    # Path where output data is stored within the `s3-bucket` -- can be anything you want
+    - s3-key: tutorials/doordash/
+
+  # The steps of the workflow
+  templates:
+
+  - name: run-doordash
+    steps:
+
+    - - name: doordash
+        template: doordash
+        arguments:
+          parameters:
+          - resources: [doordash]

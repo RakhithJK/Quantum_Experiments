@@ -6,14 +6,11 @@ spec:
     parent: generic-task
     inputs:
       parameters:
-      - name: baseurl
-      - name: latitude
-      - name: longitude
       - name: command
         value: python3 main.py
 
       artifacts:
-      - name: main-script
+      - name: main
         path: /app/main.py
         raw:
           data: |
