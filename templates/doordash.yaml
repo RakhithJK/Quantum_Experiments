@@ -10,7 +10,7 @@ spec:
         value: python3 main.py
 
       artifacts:
-      - name: main
+      - name: main-script
         path: /app/main.py
         raw:
           data: |
