@@ -15,7 +15,7 @@ spec:
         raw:
           data: |
             import json
-            #import requests
+            import requests
             import urlparse
 
             from doordash import query_doordash_by_location

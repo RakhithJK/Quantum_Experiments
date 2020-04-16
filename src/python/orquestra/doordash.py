@@ -1,5 +1,9 @@
 """Function for querying doordash by lat/long."""
 
+import json
+import requests
+import urlparse
+
 
 def query_doordash_by_location(baseurl=None, latitude=None, longitude=None):
     """Search for restaurants around a location.
