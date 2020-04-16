@@ -10,5 +10,10 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ),
-    packages=['urlparse', 'requests', 'json'],
+    packages = ['urlparse', 'requests', 'json'],
+    install_requires = [
+       "urlparse",
+       "requests",
+       "json",
+   ],
 )
