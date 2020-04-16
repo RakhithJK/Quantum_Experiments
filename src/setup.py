@@ -11,7 +11,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ),
     install_requires = [
-       "urlparse",
+       "urllib3",
        "requests",
        "json",
    ],
