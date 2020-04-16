@@ -10,7 +10,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ),
-    packages = ['doordash'],
+    py_modules=['doordash']
     install_requires = [
        "urllib3",
        "requests",
