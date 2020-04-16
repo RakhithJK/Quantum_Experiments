@@ -3,6 +3,7 @@ import setuptools
 setuptools.setup(
     name                            = "orquestra",
     packages                        = setuptools.find_packages(where = "python"),
+    url="https://github.com/bt3gl/Quantum-Experiments ",
     package_dir                     = {
         "" : "python"
     },
