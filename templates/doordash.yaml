@@ -17,7 +17,7 @@ spec:
             import json
 
             from doordash import query_doordash_by_location
-            restaurants = query_doordash_by_location(baseurl, latitude, longitude) 
+            restaurants = query_doordash_by_location()
             
             restaurants['schema'] = "restaurants_list"
             with open('restaurants.json', 'w') as f:
