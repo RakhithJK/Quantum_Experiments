@@ -3,7 +3,7 @@
 import json
 import requests
 
-def welcome():
+def query_doordash_by_location():
     baseurl = "https://www.doordash.com"
     latitude = "39.596371"
     longitude = "-119.777603"
