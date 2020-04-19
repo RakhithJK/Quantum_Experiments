@@ -14,12 +14,10 @@ spec:
         path: /app/main.py
         raw:
           data: |
-            import json
-
             from doordash import query_doordash_by_location
             query_doordash_by_location()
 
     outputs:
       artifacts:
       - name: restaurants
-        path: /app/restaurants.json
+        path: /app/search.json
