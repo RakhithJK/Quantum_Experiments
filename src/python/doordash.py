@@ -14,8 +14,7 @@ def query_doordash_by_location(baseurl=None, latitude=None, longitude=None):
     url = "https://www.doordash.com/api/v2/restaurant/?lat={0}&lng={1}".format(latitude, longitude) 
     response = requests.get(url)
 
-    #return response.json()
-    return {}
+    return response.json()
 
 
 

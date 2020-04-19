@@ -10,7 +10,7 @@ resources:
 - name: diatomic-molecule
   type: git
   parameters:
-    url: "git@github.com:<your-github-username>/<your-git-repo-name>.git"
+    url: "git@github.com:bt3gl/quantum-experiments.git"
     branch: "master"
 - name: z-quantum-core
   type: git
