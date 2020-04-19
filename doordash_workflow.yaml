@@ -23,8 +23,7 @@ metadata:
 # Data for running the workflow
 spec:
 
-  # Think of this as identifying the `main` function -- this tells the workflow which template to start with
-  entrypoint: salutations
+  entrypoint: doordash-sample
 
   # Initializing global variables for use in workflow
   arguments:
@@ -38,12 +37,11 @@ spec:
   # The steps of the workflow
   templates:
 
-  # `salutations` is a template that just contains a list of `steps`, which are other templates
-  - name: salutations
+  - name: doordash-sample
     steps:
 
     # This template runs the `welcome-to-orquestra` template in the `welcome` resource
-    - - name: greeting
+    - - name: search
         template: doordash
         arguments:
           parameters:
