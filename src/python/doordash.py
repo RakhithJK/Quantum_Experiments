@@ -9,9 +9,10 @@ def query_doordash_by_location():
     longitude = "-119.777603"
 
     url = "https://www.doordash.com/api/v2/restaurant/?lat={0}&lng={1}".format(latitude, longitude) 
+    response = requests.get(url)
 
     message_dict = {}
-    message_dict["message"] = requests.get(url)
+    message_dict["message"] = response.json()
     message_dict["schema"] = "message"
 
     with open("search.json",'w') as f:
